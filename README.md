@@ -34,11 +34,63 @@ in the "*environment*", but what does that mean?
 same everywhere you run your app and the keys that change depending on where  
 you are running the app, in the environment where you are running your app.
 
-
-
 ## *How*?
+
+### List all the *Default* Environment Variables
+
+In your terminal type: `printenv` and tap the `enter` key.
+
+You should see something like this:
+```js
+{
+  TERM_PROGRAM: 'Apple_Terminal',
+  SHELL: '/bin/bash',
+  TERM: 'xterm-256color',
+  TERM_PROGRAM_VERSION: '343.7',
+  USER: 'n',
+  PWD: '/Users/n/code/learn-environment-variables',
+  LANG: 'en_GB.UTF-8',
+  _system_arch: 'x86_64',
+  _system_name: 'OSX',
+  _: '/usr/local/bin/node'
+}
+```
+This is a list of all the variables defined in your environment,
+in this case we are running `printenv`
+
+#### Log the list of environment variables available to node.js in `process.env`
+
+Node.js gives you access to the variables defined in your environment
+in the `process.env` ***global object***.
+
+Create a file called `printenv.js` and paste the following line in it:
+```js
+console.log(process.env);
+```
+Run this script in your terminal:
+```sh
+node printenv.js
+```
+
+### Adding Variables to your Environment
+
+There are 3 ways to add variables to the environment where your app is running.
+
+#### Command-Line Arguments
+
+When you run your node program/app you can include settings as environment variables
+for example, try running the following:
+
+```sh
+PORT=1337 node printenv.js
+```
+Notice how the PORT variable is the first element displayed in the console?
+You are now able to access the `PORT` value in your node.js script
+by reference: `process.env.PORT`.
+
+
 
 ## Research & Background Reading
 
-+
++ Detailed article: https://en.wikipedia.org/wiki/Environment_variable
 + Env vars on Arch Linux: https://wiki.archlinux.org/index.php/Environment_variables
