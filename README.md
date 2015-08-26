@@ -3,7 +3,7 @@
 Learn how to use Environment Variables keep your secret keys safe & secure!
 
 ![rainforest environment](http://i.imgur.com/aL1qD74.jpg)
-<sup>*random picture of a rainforest river ... environment ... get it? ... tenuous connection? Hey, I liked it! hope you do too! Now, on with the tutorial!* </sup>
+<sup>*random picture of a rainforest river ... environment ... get it? ... tenuous connection? I liked it! hope you do too!* </sup>
 
 
 ## *Why*?
@@ -18,7 +18,7 @@ your keys to
 
 Avoid (*accidentally*) committing (*exposing*) your ***private keys***, ***passwords*** or other ***sensitive details***  
 (*by hard-coding in them in your script*) to GitHub by storing them
-as environment variables
+as environment variables.
 
 ## *What*?
 
@@ -65,7 +65,7 @@ you will see something slightly different.
 Node.js gives you access to the variables defined in your environment
 in the `process.env` ***global object***.
 
-Create a file called `printenv.js` and paste the following line in it:
+Create a file called `printenv.js` and type/paste the following line in it:
 ```js
 console.log(process.env);
 ```
@@ -78,7 +78,7 @@ node printenv.js
 
 There are 3 ways to add variables to the environment where your app is running.
 
-#### Command-Line Arguments
+#### 1. Command-Line Arguments
 
 When you run your node program/app you can include settings as environment variables
 for example, try running the following:
@@ -93,7 +93,7 @@ by reference: `process.env.PORT`
 including your config in the command you use to run your script/app gets
 cumursome when you have lots of API Keys or Databases ...
 
-#### Export the Variable to your Environment
+#### 2. Export the Variable to your Environment
 
 An improvement on this command-line arguments is to export the variable
 in your terminal:
@@ -125,9 +125,81 @@ but if you use a terminal that does not *save* your variables across sessions,
 
 Thankfully there's a 3rd (*easier*) way!
 
+#### 3. Use a `config.env` file *locally* which you can `.gitignore`
+
+The way we prefer to manage our Environment Variables on our development machines
+is using a `config.env` file which gets loaded into our app *once* and
+adds any entries in the `.env` file to the `process.env` (*global object*).
+
+We wrote the **env2** ***node.js module*** to load configuration from a `.env` or
+`.json` file.
+
+Loading your environment variables from a `config.env` file is as easy as "ABC"!
+
+##### A. Create your `config.env` file
+
+Create a `config.env` file in the root of your project and insert
+your key/value pairs in the following format of `KEY=VALUE`:
+
+```sh
+DB_HOST=127.0.0.1
+DB_PORT=9200
+DB_USER=TheSpecial
+DB_PASS=EverythingIsAwesome
+```
+
+##### B. Install `env2` and save it to your `package.json`
+
+Install the **env2** module from NPM and save it as a Dependency in your
+`package.json` file:
+
+```sh
+npm install env2 --save
+```
+
+##### C. Invoke `env2` and use the variable in your script
+
+Loading your configuration is a 1-line call to node.js's `require` method
+which loads **env2** and invokes it with your `config.env` file as the argument:
+
+```js
+require('env2')('config.env');    // loads all entries into process.env
+
+console.log(process.env.DB_HOST); // "127.0.0.1"
+```
+
+Now you can access any of the entries in your `config.env` file as a key
+in the `process.env` Object e.g: `process.env.PORT` is `9200` (in our example above).
+
+
+##### D. Add `config.env` to your `.gitignore` file!
+
+```sh
+echo config.env >> .gitignore
+```
+
+This ensures that the `config.env` is not "tracked" in .git and thus
+will not be public on GitHub. i.e only visible on your local machine.  
+If you are new/rusty on using `.gitignore` file to omit files/folders
+from your Git/GitHub repo read: http://git-scm.com/docs/gitignore
+
+<sup>1</sup>**env2** solves the problem of loading config files,
+we *recommend* using **env2** because the ***code is clean, tested & documented***,
+but there are *other* solutions to this problem on NPM you can chose from
+depending on your needs. But if **env2** does cover your *specific* use-case,
+please tell us about it, we *always* love helping to solve problems and
+enhance our modules to be more useful to people! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 
 ## Research & Background Reading
 
 + Detailed article: https://en.wikipedia.org/wiki/Environment_variable
++ The Twelve-Factor App > Configuration: http://12factor.net/config
 + Env vars on Arch Linux: https://wiki.archlinux.org/index.php/Environment_variables
+
+# Thanks!
+
+Thanks for learning about Environment Variables with us!  
+If you have any questions, please ***ask***!! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
+Please :star: this repo to help spread the word!
