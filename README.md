@@ -192,7 +192,7 @@ enhance our modules to be more useful to people! [![Join the chat at https://git
 
 
 
-## Using *Environment Variables* with Travis-CI! [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://github.com/dwyl/repo-badges) 
+## Using *Environment Variables* with Travis-CI! [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://github.com/dwyl/repo-badges)
 
 > If you are ***new to Travis-CI***
 check out our ***introductory tutorial*** (*for complete beginners*):
@@ -262,6 +262,21 @@ Type `yes` to confirm you are your project, you should now see your encrypted va
 Paste this in your `.travis.yml` file and commit it to GitHub!
 
 <br />
+
+
+## Environment Variables on Heroku
+
+Visit your apps dashboard on heroku and click on the app you want to add
+an environment variable to:
+
+Go to `Settings` and Click `Reveal Config Vars` to view the `Config Vars`:
+![heroku reveal config vars](http://i.imgur.com/99M0kWK.png)
+
+Next, click on `edit` and and add your desired key/value pair:
+
+![add your env vars](http://i.imgur.com/kLp4X9P.png)
+
+That's all there is to it!
 
 ## Research & Background Reading
 
