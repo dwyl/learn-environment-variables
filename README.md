@@ -56,7 +56,9 @@ You should see something like this:
 }
 ```
 This is a list of all the variables defined in your environment,
-in this case we are running `printenv`
+in this case we are running `printenv` on a Mac using the "Terminal" app,  
+if you are on Linux/Unix using Bash/etc.
+you will see something slightly different.
 
 #### Log the list of environment variables available to node.js in `process.env`
 
@@ -84,9 +86,44 @@ for example, try running the following:
 ```sh
 PORT=1337 node printenv.js
 ```
-Notice how the PORT variable is the first element displayed in the console?
+Notice how the PORT variable is the *first element* displayed in the console?
 You are now able to access the `PORT` value in your node.js script
-by reference: `process.env.PORT`.
+by reference: `process.env.PORT`
+
+including your config in the command you use to run your script/app gets
+cumursome when you have lots of API Keys or Databases ...
+
+#### Export the Variable to your Environment
+
+An improvement on this command-line arguments is to export the variable
+in your terminal:
+
+Type/paste this in your terminal window and tap enter:
+```sh
+export HELLO=WORLD
+```
+Now `printenv` or `node printenv.js` to see it printed!
+the `HELLO` key is now available in the `process.env` object
+try adding the following line to your `printenv.js` file:
+
+```js
+console.log(">> Hello", process.env.HELLO);
+```
+Now run it in your terminal:
+```sh
+node printenv.js
+```
+What do you see?
+
+```sh
+>> Hello WORLD
+```
+
+Exporting your keys to your environment using `export MY_VAR=HAI` works
+but if you use a terminal that does not *save* your variables across sessions,
+(e.g. if you close your terminal window!) you will have to keep exporting them!
+
+Thankfully there's a 3rd (*easier*) way!
 
 
 
