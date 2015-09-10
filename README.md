@@ -123,7 +123,7 @@ Exporting your keys to your environment using `export MY_VAR=HAI` works
 but if you use a terminal that does not *save* your variables across sessions,
 (e.g. if you close your terminal window!) you will have to keep exporting them!
 
-Thankfully there's a 3rd (*easier*) way!
+Thankfully there's a ***3rd*** (*easier*) ***way***: https://github.com/dwyl/env2
 
 #### 3. Use a `config.env` file *locally* which you can `.gitignore`
 
@@ -131,7 +131,8 @@ The way we prefer to manage our Environment Variables on our development machine
 is using a `config.env` file which gets loaded into our app *once* and
 adds any entries in the `.env` file to the `process.env` (*global object*).
 
-We wrote the **env2** ***node.js module*** to load configuration from a `.env` or
+We wrote the [**env2**](https://github.com/dwyl/env2)
+***node.js module*** to load configuration from a `.env` or
 `.json` file.
 
 Loading your environment variables from a `config.env` file is as easy as "ABC"!
@@ -150,7 +151,8 @@ DB_PASS=EverythingIsAwesome
 
 ##### B. Install `env2` and save it to your `package.json`
 
-Install the **env2** module from NPM and save it as a Dependency in your
+Install the [**env2**](https://github.com/dwyl/env2)
+module from NPM and save it as a Dependency in your
 `package.json` file:
 
 ```sh
@@ -160,7 +162,8 @@ npm install env2 --save
 ##### C. Invoke `env2` and use the variable in your script
 
 Loading your configuration is a 1-line call to node.js's `require` method
-which loads **env2** and invokes it with your `config.env` file as the argument:
+which loads [**env2**](https://github.com/dwyl/env2) and invokes it with
+your `config.env` file as the argument:
 
 ```js
 require('env2')('config.env');    // loads all entries into process.env
@@ -183,10 +186,12 @@ will not be public on GitHub. i.e only visible on your local machine.
 If you are new/rusty on using `.gitignore` file to omit files/folders
 from your Git/GitHub repo read: http://git-scm.com/docs/gitignore
 
-<sup>1</sup>**env2** solves the problem of loading config files,
-we *recommend* using **env2** because the ***code is clean, tested & documented***,
+<sup>1</sup>[**env2**](https://github.com/dwyl/env2) solves the problem
+of loading config files, we *recommend* using [**env2**](https://github.com/dwyl/env2) because
+the ***code is clean, tested & documented***,
 but there are *other* solutions to this problem on NPM you can chose from
-depending on your needs. But if **env2** does cover your *specific* use-case,
+depending on your needs. But if [**env2**](https://github.com/dwyl/env2)
+does cover your *specific* use-case,
 please tell us about it, we *always* love helping to solve problems and
 enhance our modules to be more useful to people! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
