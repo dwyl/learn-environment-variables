@@ -3,7 +3,6 @@
 Learn how to use Environment Variables keep your secret keys safe & secure!
 
 ![rainforest environment](http://i.imgur.com/aL1qD74.jpg)
-<sup>*random picture of a rainforest river ... environment ... get it? ... tenuous connection? I liked it! hope you do too!* </sup>
 
 
 ## *Why*?
@@ -194,6 +193,21 @@ depending on your needs. But if [**env2**](https://github.com/dwyl/env2)
 does cover your *specific* use-case,
 please tell us about it, we *always* love helping to solve problems and
 enhance our modules to be more useful to people! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+## Environment Variable *Naming Convention*
+
+The Google Shell Style Guide (*naming convention*) states: **All caps, separated with underscores**
+so this is *Good*:
+```sh
+export DATABASE_HOST=localhost
+```
+Whereas this is *Bad*:
+```sh
+export databaseHost=localhost
+```
+
+see: https://google.github.io/styleguide/shell.xml#Constants_and_Environment_Variable_Names
 
 
 
