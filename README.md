@@ -2,24 +2,19 @@
 
 Learn how to use Environment Variables keep your secret keys safe & secure!
 
-![rainforest environment](http://i.imgur.com/aL1qD74.jpg)
-
-
 ## *Why*?
-
-If you put an API key on GitHub it means out of your control and someone
-(*unauthorised*) has access ...  
-the physical-world equivalent is writing your home address on the keyring
-for your house keys and  
-then losing your keys in a bad neighborhood, you'll be *lucky* if nobody uses
-your keys to  
-"borrow" the TV from your house...!
 
 Avoid (*accidentally*) committing (*exposing*) your ***private keys***, ***passwords*** or other ***sensitive details***  
 (*by hard-coding in them in your script*) to GitHub by storing them
 as environment variables.
 
+> *Accidentally* pushing API keys to GitHub can be an *Expensive/Stressful Lesson*:
+<small>https://www.quora.com/My-AWS-account-was-hacked-and-I-have-a-50-000-bill-how-can-I-reduce-the-amount-I-need-to-pay</small>
+
 ## *What*?
+
+An environment variable is a `KEY=value` pair that is stored on the
+local system where your code/app is being run and is accessible from within your code.
 
 If you are new to "***back end***" development, you may not have encountered
 environment variables
@@ -37,7 +32,7 @@ you are running the app, in the environment where you are running your app.
 
 ### List all the *Default* Environment Variables
 
-In your terminal type: `printenv` and tap the `enter` key.
+In your terminal type: `printenv` and then the `enter` key.
 
 You should see something like this:
 ```js
