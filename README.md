@@ -209,7 +209,19 @@ export databaseHost=localhost
 
 see: https://google.github.io/styleguide/shell.xml#Constants_and_Environment_Variable_Names
 
+## Removing an Environment Variable
 
+If you have exported an environment variable in your terminal, e.g:
+```sh
+export PORT=8000
+```
+You can `unset` (*delete*) it by running:
+```sh
+unset PORT
+```
+Now the `PORT` environment variable will no longer be set.
+
+<br />
 
 ## Using *Environment Variables* with Travis-CI! [![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://github.com/dwyl/repo-badges)
 
