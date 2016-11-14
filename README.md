@@ -119,21 +119,21 @@ but if you use a terminal that does not *save* your variables across sessions,
 
 Thankfully there's a ***3rd*** (*easier*) ***way***: https://github.com/dwyl/env2
 
-#### 3. Use a `config.env` file *locally* which you can `.gitignore`
+#### 3. Use a `.env` file *locally* which you can `.gitignore`
 
 The way we prefer to manage our Environment Variables on our development machines
-is using a `config.env` file which gets loaded into our app *once* and
+is using a `.env` file which gets loaded into our app *once* and
 adds any entries in the `.env` file to the `process.env` (*global object*).
 
 We wrote the [**env2**](https://github.com/dwyl/env2)
 ***node.js module*** to load configuration from a `.env` or
 `.json` file.
 
-Loading your environment variables from a `config.env` file is as easy as "ABC"!
+Loading your environment variables from a `.env` file is as easy as "ABC"!
 
-##### A. Create your `config.env` file
+##### A. Create your `.env` file
 
-Create a `config.env` file in the root of your project and insert
+Create a `.env` file in the root of your project and insert
 your key/value pairs in the following format of `KEY=VALUE`:
 
 ```sh
@@ -157,25 +157,25 @@ npm install env2 --save
 
 Loading your configuration is a 1-line call to node.js's `require` method
 which loads [**env2**](https://github.com/dwyl/env2) and invokes it with
-your `config.env` file as the argument:
+your `.env` file as the argument:
 
 ```js
-require('env2')('config.env');    // loads all entries into process.env
+require('env2')('.env');    // loads all entries into process.env
 
 console.log(process.env.DB_HOST); // "127.0.0.1"
 ```
 
-Now you can access any of the entries in your `config.env` file as a key
+Now you can access any of the entries in your `.env` file as a key
 in the `process.env` Object e.g: `process.env.PORT` is `9200` (in our example above).
 
 
-##### D. Add `config.env` to your `.gitignore` file!
+##### D. Add `.env` to your `.gitignore` file!
 
 ```sh
-echo config.env >> .gitignore
+echo .env >> .gitignore
 ```
 
-This ensures that the `config.env` is not "tracked" in .git and thus
+This ensures that the `.env` is not "tracked" in .git and thus
 will not be public on GitHub. i.e only visible on your local machine.  
 If you are new/rusty on using `.gitignore` file to omit files/folders
 from your Git/GitHub repo read: http://git-scm.com/docs/gitignore
@@ -234,7 +234,7 @@ is to add them to your `.travis.yml` file:
 ```yml
 language: node_js
 node_js:
-  - 0.12
+  - 6
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TEST
