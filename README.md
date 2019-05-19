@@ -30,7 +30,7 @@ you are running the app, in the environment where you are running your app.
 
 ## *How*?
 
-### List all the *Default* Environment Variables
+### List all the *Default* Environment Variables
 
 In your terminal type: `printenv` and then the `enter` key.
 
@@ -54,7 +54,7 @@ in this case we are running `printenv` on a Mac using the "Terminal" app,
 if you are on Linux/Unix using Bash/etc.
 you will see something slightly different.
 
-#### Log the list of environment variables available to node.js in `process.env`
+#### Log the list of environment variables available to node.js in `process.env`
 
 Node.js gives you access to the variables defined in your environment
 in the `process.env` ***global object***.
