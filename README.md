@@ -1,8 +1,13 @@
-# Learn Environment Variables [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+<div align="center">
+
+# Learn Environment Variables [![HitCount](http://hits.dwyl.com/dwyl/learn-environment-variables.svg)](http://hits.dwyl.com/dwyl/learn-environment-variables)
 
 Learn how to use Environment Variables keep your secret keys safe & secure!
 
-## *Why*?
+</div>
+
+## *Why*? 🤷
 
 Avoid (*accidentally*) committing (*exposing*) your ***private keys***, ***passwords*** or other ***sensitive details***  
 (*by hard-coding in them in your script*) to GitHub by storing them
@@ -11,7 +16,7 @@ as environment variables.
 > *Accidentally* pushing API keys to GitHub can be an *Expensive/Stressful Lesson*:
 <small>https://www.quora.com/My-AWS-account-was-hacked-and-I-have-a-50-000-bill-how-can-I-reduce-the-amount-I-need-to-pay</small>
 
-## *What*?
+## *What*? 💭
 
 An environment variable is a `KEY=value` pair that is stored on the
 local system where your code/app is being run and is accessible from within your code.
@@ -28,7 +33,7 @@ in the "*environment*", but what does that mean?
 same everywhere you run your app and the keys that change depending on where  
 you are running the app, in the environment where you are running your app.
 
-## *How*?
+## *How*? 💻
 
 ### List all the *Default* Environment Variables
 
@@ -187,12 +192,12 @@ but there are *other* solutions to this problem on NPM you can chose from
 depending on your needs. But if [**env2**](https://github.com/dwyl/env2)
 does cover your *specific* use-case,
 please tell us about it, we *always* love helping to solve problems and
-enhance our modules to be more useful to people! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
+enhance our modules to be more useful to people! 
 
 ## Environment Variable *Naming Convention*
 
-The Google Shell Style Guide (*naming convention*) states: **All caps, separated with underscores**
+The Google Shell Style Guide (*naming convention*) states: 
+**All caps, separated with underscores**
 so this is *Good*:
 ```sh
 export DATABASE_HOST=localhost
@@ -313,8 +318,8 @@ That's all there is to it!
 # Thanks!
 
 Thanks for learning about Environment Variables with us!  
-If you have any questions, please ***ask***!! [![Join the chat at https://gitter.im/dwyl/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/chat/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)  
-Please :star: this repo to help spread the word!
+If you have any questions, please ***ask***!!  
+Please ⭐ this repo to help spread the word!
 
 If you are using environment variables in a way not mentioned in this readme,
 or have a better way of managing them or ***any*** other ***ideas
